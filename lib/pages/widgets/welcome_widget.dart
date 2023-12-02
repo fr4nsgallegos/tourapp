@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tourapp/pages/home_page.dart';
+import 'package:tourapp/pages/home_page_2.dart';
 
 class WelcomeWidget extends StatelessWidget {
   String title;
@@ -58,7 +59,7 @@ class WelcomeWidget extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => HomePage(),
+                                builder: (context) => HomePage2(),
                               ),
                             );
                           },

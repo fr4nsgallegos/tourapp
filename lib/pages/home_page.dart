@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tourapp/pages/home_page_2.dart';
+import 'package:tourapp/pages/init_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -30,37 +32,12 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _getValue();
+    // _getValue();
   }
 
   // Future isFirstTime() async {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text("Home"),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                num.toString(),
-                style: TextStyle(fontSize: 50),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  num++;
-                  _saveValue(num);
-                  setState(() {});
-                },
-                child: Text("PRESIONA"),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
+    return showWelcome == true ? InitPage() : HomePage2();
   }
 }
