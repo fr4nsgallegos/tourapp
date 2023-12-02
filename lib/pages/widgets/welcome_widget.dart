@@ -27,10 +27,8 @@ class WelcomeWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(25),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 50,
-                ),
                 Image.asset(pathAsset, height: 150),
                 SizedBox(
                   height: 50,

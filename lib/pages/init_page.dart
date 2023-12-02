@@ -20,19 +20,24 @@ class InitPage extends StatelessWidget {
               title: "Agregar items",
               description:
                   "Phasellus sed augue vita ullamcorper fringilla faucibus. Proin velit elit, lacinia at aliquet et, convallis sed massa. Aliquam e",
-              color: Colors.cyan,
+              color: Colors.orangeAccent,
               pathAsset: "assets/icons/agregar.png",
             ),
             WelcomeWidget(
               title: "Viaja sin imprimir el qr",
               description:
                   "Phasellus sed augue vitae ex facilisis volutpat. Nullam eleifend augue lorem, in molestie leo consectetur sed. ",
-              color: Colors.cyan,
+              color: Colors.pinkAccent,
               pathAsset: "assets/icons/print.png",
             ),
           ],
           options: CarouselOptions(
             height: MediaQuery.of(context).size.height,
+            autoPlay: true,
+            // enableInfiniteScroll: false,
+            autoPlayCurve: Curves.linear,
+            enlargeCenterPage: true,
+            autoPlayAnimationDuration: Duration(seconds: 1),
           ),
         ),
       ),
