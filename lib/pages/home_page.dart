@@ -28,10 +28,26 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  Future _getYaInicio() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.getBool("yaInicio") == true) {
+      print("*****************");
+      print(prefs.getBool("yaInicio"));
+      showWelcome = false;
+      setState(() {});
+    } else {
+      print("-------------------");
+      print(prefs.getBool("yaInicio"));
+      showWelcome = true;
+      setState(() {});
+    }
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    _getYaInicio();
     // _getValue();
   }
 
