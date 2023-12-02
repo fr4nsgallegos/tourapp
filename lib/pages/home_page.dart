@@ -8,19 +8,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool showWelcome = true;
+  int num = 0;
 
-  Future _saveValue(bool valor) async {
+  Future _saveValue(int valor) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    preferences.setBool('variable', valor);
+    preferences.setInt('ovejitas', valor);
   }
 
   Future _getValue() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    showWelcome = preferences.getBool('variable') ?? true;
-    print("valor prefs");
-    print(preferences.getBool('variable'));
-    print("variable showwelcome");
-    print(showWelcome);
+    num = preferences.getInt('ovejitas') ?? 0;
+    // showWelcome = preferences.getBool('showWel') ?? true;
+    print("valor OVEJITAS");
+    print(preferences.getInt('ovejitas'));
+    print("variable NUM");
+    print(num);
     setState(() {});
   }
 
@@ -29,7 +31,6 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement initState
     super.initState();
     _getValue();
-    // showWelcome = false;
   }
 
   // Future isFirstTime() async {
@@ -45,14 +46,13 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                showWelcome.toString(),
+                num.toString(),
                 style: TextStyle(fontSize: 50),
               ),
               ElevatedButton(
                 onPressed: () {
-                  _saveValue(false);
-                  showWelcome = false;
-
+                  num++;
+                  _saveValue(num);
                   setState(() {});
                 },
                 child: Text("PRESIONA"),

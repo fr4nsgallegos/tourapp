@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tourapp/pages/home_page.dart';
 
 class WelcomeWidget extends StatelessWidget {
   String title;
@@ -53,7 +54,14 @@ class WelcomeWidget extends StatelessWidget {
                   ),
                   button == true
                       ? ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomePage(),
+                              ),
+                            );
+                          },
                           child: Text("Vamos"),
                         )
                       : Container()
