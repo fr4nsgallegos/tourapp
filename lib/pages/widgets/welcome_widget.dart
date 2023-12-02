@@ -5,17 +5,19 @@ class WelcomeWidget extends StatelessWidget {
   String description;
   Color color;
   String pathAsset;
+  bool button;
   WelcomeWidget({
     required this.title,
     required this.description,
     required this.color,
     required this.pathAsset,
+    required this.button,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(0.0),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,6 +48,15 @@ class WelcomeWidget extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 50),
                     child: Text(description),
                   ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  button == true
+                      ? ElevatedButton(
+                          onPressed: () {},
+                          child: Text("Vamos"),
+                        )
+                      : Container()
                 ],
               ),
             )
