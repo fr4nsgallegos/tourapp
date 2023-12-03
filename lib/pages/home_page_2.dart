@@ -46,7 +46,26 @@ class HomePage2 extends StatelessWidget {
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Row(),
+              child: Row(
+                children: [
+                  Container(
+                    width: 160,
+                    height: 220,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                            "https://images.pexels.com/photos/3538245/pexels-photo-3538245.jpeg"),
+                      ),
+                    ),
+                    child: Column(
+                      children: [],
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),
